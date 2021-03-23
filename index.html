@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+  <title>Hitung.in</title>
+  <div class="text-center">
+    <h1 id="gameTitle">Hitung.in</h1>
+    <h2 id="selectDiff">Select Difficulty</h2>
+  </div>
+
+  <script src="src/tfjs"></script>
+  <script src="src/handpose"></script>
+  <script src="src/game.js" type="text/javascript"></script>
+  <script src="fingerpose.js" type="text/javascript"></script>
+  <script src="src/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <link href="css/index.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div id="video-container">
+    <video id="pose-video" class="layer" playsinline></video>
+    <canvas id="pose-canvas" class="layer"></canvas>
+    <div id="pose-result" class="layer"></div>
+  </div>
+  <script src="src/videoFeed.js"></script>
+  
+<div id="page-one">
+  
+  <div class="text-center">
+    <div class="btn-group-vertical">
+      <button id="startButton" type="button" class="btn btn-primary btn-lg">✋ Start ✋</button>
+      <button id="helpbutton" type="button" class="btn btn-secondary btn-lg">✊ Help ✊</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="page-two">
+  <h2>Help</h2>
+  <div class="text-center">
+    <ol>
+      <li>Pastikan browser anda diperbolehkan mengakses kamera</li>
+      <li>Untuk menjawab, acungkan jari anda sebanyak angka jawaban atau buat gestur tangan sesuai pilihan</li>
+    </ol>
+    <p>Jawaban dari Easy mode hanya 1 hingga 5 <br>
+      Jawaban dari Hard mode sesuai pilihan ganda
+    </p>
+    <!--<ol>
+      <li>Make sure your browser is allowed to access your camera</li>
+      <li>To answer, make a gesture of the number with your fingers</li>
+    </ol>
+    <p>Easy mode answers are only 1 to 5<br>
+      Hard mode answers are multiple choice
+    </p>-->
+ 
+    <div class="btn-group-vertical">
+      <button id="startButton2" type="button" class="btn btn-primary btn-lg">✋ Start ✋</button>
+      <button id="menubutton2" type="button" class="btn btn-secondary btn-lg">✊ Main Menu ✊</button>
+    </div>
+  </div>
+</div>
+
+<div id="page-three">
+  <div class="text-center">
+    <div class="btn-group-vertical">
+      <button id="easy" type="button" class="btn btn-primary btn-lg">👍 Easy 👍</button>
+      <button id="hard" type="button" class="btn btn-danger btn-lg">✋ Hard ✋</button>
+      <button id="menubutton3" type="button" class="btn btn-secondary btn-lg">✊ Main Menu ✊</button>
+    </div>
+  </div>
+</div>
+  
+<script src="src/tfjs"></script>
+<script src="src/handpose"></script>
+<!--<script src="fingerpose.js" type="text/javascript"></script>-->
+<script src="src/game.js" type="text/javascript"></script>
+<script src="src/jquery-3.6.0.min.js" type="text/javascript"></script>
+</body>
+</html>
