@@ -11,11 +11,26 @@ var pageThree = document.getElementById("page-three");
 var pageStatusOne = pageOne.style.display;
 var pageStatusTwo = pageTwo.style.display;
 var pageStatusThree = pageThree.style.display;
+pageOne.style.display = "inline";
 pageTwo.style.display = "none";
 pageThree.style.display = "none";
 selDiff.style.display = "none";
 
+function recog(){
+    console.log(hasil);
+    if(pageOne.style.display=="inline"){
+        if(hasil=="2"){
+            helpButton.click();
+        } else if(hasil=="👍"){
+            startButton.click();
+        }
+    } else if(pageTwo.style.display=="inline"){
+        //unfinished
+    }
+    
+}
 
+setInterval(recog, 500);
 helpButton.onclick = function() {
     pageOne.style.display= "none";
     console.log('help clicked');

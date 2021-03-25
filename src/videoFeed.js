@@ -1,4 +1,4 @@
-
+var hasil;
     const config = {
         video: { width: 640, height: 480, fps: 30 }
       };
@@ -14,7 +14,7 @@
   
       const gestureStrings = {
         'thumbs_up': '👍',
-        'victory': '✌🏻',
+        'victory': '2',
         'one' : '1',
         'two' : '2',
         'three' : '3',
@@ -29,7 +29,7 @@
         const ctx = canvas.getContext("2d");
   
         const resultLayer = document.querySelector("#pose-result");
-  
+        
         // configure gesture estimator
         // add "✌🏻" and "👍" as sample gestures
         const knownGestures = [
@@ -80,6 +80,7 @@
               });
   
               resultLayer.innerText = gestureStrings[result.name];
+              hasil = gestureStrings[result.name];
             }
           }
   
