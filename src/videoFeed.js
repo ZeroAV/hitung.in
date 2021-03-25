@@ -15,6 +15,7 @@ var hasil;
       const gestureStrings = {
         'thumbs_up': '👍',
         'victory': '2',
+        'zero' : '0',
         'one' : '1',
         'two' : '2',
         'three' : '3',
@@ -35,11 +36,12 @@ var hasil;
         const knownGestures = [
           fp.Gestures.VictoryGesture,
           fp.Gestures.ThumbsUpGesture,
+          fp.Gestures.zero,
           fp.Gestures.one,
           //fp.Gestures.two,
           fp.Gestures.three,
           fp.Gestures.four,
-          //fp.Gestures.five
+          fp.Gestures.five
         ];
         const GE = new fp.GestureEstimator(knownGestures);
   

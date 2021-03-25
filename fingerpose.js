@@ -63,6 +63,9 @@
         })), n.d(r, "ThumbsUpGesture", (function () {
             return j
         })),
+        n.r(r), n.d(r, "zero", (function () {
+            return zero0
+        })),
         n.r(r), n.d(r, "one", (function () {
             return one1
         })),
@@ -71,6 +74,9 @@
         })),
         n.r(r), n.d(r, "four", (function () {
             return four4
+        })),
+        n.r(r), n.d(r, "five", (function () {
+            return five5
         }));
         var o = {
                 Thumb: 0,
@@ -734,6 +740,14 @@
         }
         var j = R;
 
+        var zero = new S("zero");
+        zero.addCurl(o.Thumb, a.FullCurl, .75), 
+        zero.addCurl(o.Index, a.FullCurl, .75),
+        zero.addCurl(o.Middle, a.FullCurl, .75), 
+        zero.addCurl(o.Ring, a.FullCurl, .75), 
+        zero.addCurl(o.Pinky, a.FullCurl, .75)
+        var zero0 = zero;
+
         var one = new S("one");
         one.addCurl(o.Thumb, a.FullCurl, .5), 
         one.addCurl(o.Index, a.NoCurl, .75),
@@ -761,7 +775,7 @@
         var three3 = three;
 
         var four = new S("four");
-        four.addCurl(o.Thumb, a.FullCurl, 1), 
+        four.addCurl(o.Thumb, a.FullCurl, .75), 
         four.addCurl(o.Index, a.NoCurl, .75),
         //three.addDirection(o.Index, l.DiagonalUpLeft, .75),
         four.addCurl(o.Middle, a.NoCurl, .75), 
@@ -775,6 +789,15 @@
         four.setWeight(o.Pinky, 1)
 
         var four4 = four;
+
+        var five = new S("five");
+        five.addCurl(o.Thumb, a.NoCurl, .75), 
+        five.addCurl(o.Index, a.NoCurl, .75),
+        five.addCurl(o.Middle, a.NoCurl, .75), 
+        five.addCurl(o.Ring, a.NoCurl, .75), 
+        five.addCurl(o.Pinky, a.NoCurl, .75)
+        var five5 = five;
+
         e.default = {
             GestureEstimator: m,
             GestureDescription: S,
