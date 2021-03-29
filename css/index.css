@@ -16,17 +16,22 @@
   }
   
   h2{
-    margin-top: 5% !important;
-    margin-bottom: 5% !important;
+    margin-top: 0.5% !important;
+    margin-bottom: 0.5% !important;
   }
 
-  #easy-question {
-    margin-top: 5% !important;
-    margin-bottom: 5% !important;
+  #questionDiv {
+    margin-top: 0.5% !important;
+    margin-bottom: 0.1% !important;
     width: 100% !important;
     height: 100% !important;
+    font-size: 50px !important;
   }
 
+  #prize{
+    margin-top: 0.5% !important;
+    font-size: 25px !important;
+  }
   .btn-primary, .btn-secondary, .btn-danger{
       text-align: center !important;
       margin-top: 5%;

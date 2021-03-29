@@ -1,4 +1,4 @@
-var hasil;
+var hasilGestur;
     const config = {
         video: { width: 640, height: 480, fps: 30 }
       };
@@ -82,7 +82,7 @@ var hasil;
               });
   
               resultLayer.innerText = gestureStrings[result.name];
-              hasil = gestureStrings[result.name];
+              hasilGestur = gestureStrings[result.name];
             }
           }
   
