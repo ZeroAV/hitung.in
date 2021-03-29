@@ -128,17 +128,18 @@ easyButton.onclick = function(){
 
 function gameLoop(){
     if(isEasy){ //easy mode
-        firstNumber = randomizeInt(1, 4);
         arrIndex = randomizeInt(0, 1);
         switch(arrIndex){
             case 0:
-                operator = "+";
+                operator = "+";   
+                 firstNumber = randomizeInt(1, 4);
                 result = randomizeInt(1,5);
                 secondNumber = result - firstNumber;
                 break;
             case 1:
                 operator = "-";
-                secondNumber = firstNumber - randomizeInt(1, 5); //working
+                firstNumber = randomizeInt(1, 10)
+                secondNumber = firstNumber - randomizeInt(1, 5);
                 result = firstNumber - secondNumber;
                 break;
         }
@@ -173,13 +174,13 @@ function gameLoop(){
                 result = firstNumber * secondNumber;
                 break;
             case 3:
-                operator = "/";
+                operator = "÷";
                 result = firstNumber / secondNumber;
                 break;
         }
         pil1 = randomizeInt(1, 250);
-        pil2 = randomizeInt(1,250);
-        pil3 = randomizeInt(1,250);
+        pil2 = randomizeInt(1, 250);
+        pil3 = randomizeInt(1, 250);
     }
 }
 
