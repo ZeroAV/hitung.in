@@ -32,6 +32,10 @@ var result = 0;
 var isEasy = false;
 var time = 60;
 var score = 0;
+var temp = 0;
+var pil1 = 0;
+var pil2 = 0;
+var pil3 = 0;
 var operators = ["+", "-", "*", "/"] ;
 var arrIndex = 0;
 
@@ -124,28 +128,18 @@ easyButton.onclick = function(){
 
 function gameLoop(){
     if(isEasy){ //easy mode
-        firstNumber = randomizeInt(1, 10);
+        firstNumber = randomizeInt(1, 4);
         arrIndex = randomizeInt(0, 1);
         switch(arrIndex){
             case 0:
                 operator = "+";
-                secondNumber = firstNumber + randomizeInt(1, 5);
-                result = firstNumber + secondNumber;
+                result = randomizeInt(1,5);
+                secondNumber = result - firstNumber;
                 break;
             case 1:
                 operator = "-";
-                secondNumber = firstNumber - randomizeInt(1, 5);
+                secondNumber = firstNumber - randomizeInt(1, 5); //working
                 result = firstNumber - secondNumber;
-                break;
-            case 2:
-                operator = "x";
-                secondNumber = firstNumber * randomizeInt(1, 5);
-                result = firstNumber * secondNumber;
-                break;
-            case 3:
-                operator = "/";
-                secondNumber = firstNumber / randomizeInt(1, 5);
-                result = firstNumber / secondNumber;
                 break;
         }
 
@@ -162,7 +156,30 @@ function gameLoop(){
     }
 
     } else{ //hard mode
-
+        firstNumber = randomizeInt(1, 50);
+        secondNumber = randomizeInt(1, 50)
+        arrIndex = randomizeInt(0, 3);
+        switch(arrIndex){
+            case 0:
+                operator = "+";
+                result = firstNumber + secondNumber;
+                break;
+            case 1:
+                operator = "-";
+                result = firstNumber - secondNumber;
+                break;
+            case 2:
+                operator = "x";
+                result = firstNumber * secondNumber;
+                break;
+            case 3:
+                operator = "/";
+                result = firstNumber / secondNumber;
+                break;
+        }
+        pil1 = randomizeInt(1, 250);
+        pil2 = randomizeInt(1,250);
+        pil3 = randomizeInt(1,250);
     }
 }
 
