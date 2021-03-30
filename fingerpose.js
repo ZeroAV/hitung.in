@@ -775,18 +775,18 @@
         var three3 = three;
 
         var four = new S("four");
-        four.addCurl(o.Thumb, a.FullCurl, .75), 
+        four.addCurl(o.Thumb, a.HalfCurl, .75), 
         four.addCurl(o.Index, a.NoCurl, .75),
         //three.addDirection(o.Index, l.DiagonalUpLeft, .75),
         four.addCurl(o.Middle, a.NoCurl, .75), 
         four.addDirection(o.Middle, l.VerticalUp, .75),
         four.addCurl(o.Ring, a.NoCurl, .75), 
         //three.addDirection(o.Ring, l.DiagonalUpRight, .75),
-        four.addCurl(o.Pinky, a.NoCurl, 1),
-        four.setWeight(o.Index, 1),
+        four.addCurl(o.Pinky, a.NoCurl, 1)
+        /*four.setWeight(o.Index, 1),
         four.setWeight(o.Middle, 2),
         four.setWeight(o.Ring, 1),
-        four.setWeight(o.Pinky, 1)
+        four.setWeight(o.Pinky, 1)*/
 
         var four4 = four;
 
