@@ -40,6 +40,7 @@ var temp = 0;
 var pil1 = 0;
 var pil2 = 0;
 var pil3 = 0;
+var pilArray = [1, 2, 3 , 4];
 var operators = ["+", "-", "*", "/"] ;
 var arrIndex = 0;
 var gameStart
@@ -186,6 +187,14 @@ easyButton.onclick = function(){
 
 hardButton.onclick = function(){
     isEasy = false;
+    pageThree.style.display= "none";
+    gameTitle.style.display = "none";
+    selDiff.style.display = "none";
+    console.log('hard clicked');
+    question.style.display = "inline";
+    timeText.style.display = "inline";
+    pageFive.style.display= "inline";
+    gameStart = setInterval(gameLoop, 1000);
 }
 
 playAgainButton.onclick = function(){
@@ -206,12 +215,12 @@ playAgainButton.onclick = function(){
 
 function gameLoop(){
     if(isEasy){ //easy mode
-    firstNumberText.textContent = "";
-    secondNumberText.textContent = "";
-    operatorText.textContent = operator;
-    timeText.textContent = "Time: 60";
-    prizeText.textContent = "Prize: $"+ score;
-    arrIndex = randomizeInt(0, 1);
+        firstNumberText.textContent = "";
+        secondNumberText.textContent = "";
+        operatorText.textContent = operator;
+        timeText.textContent = "Time: 60";
+        prizeText.textContent = "Prize: $"+ score;
+        arrIndex = randomizeInt(0, 1);
         if(firstNumber==1000 && secondNumber==1000){
             randomizeNumbers(arrIndex);
             firstNumberText.textContent = firstNumber;
@@ -220,20 +229,25 @@ function gameLoop(){
             timeText.textContent = "Time: "+time;
             resultText.textContent = result;
         }
-    firstNumberText.textContent = firstNumber;
-    secondNumberText.textContent = secondNumber;
-    operatorText.textContent = operator;
-    timeText.textContent = "Time: "+time;
-    resultText.textContent = result;
+        firstNumberText.textContent = firstNumber;
+        secondNumberText.textContent = secondNumber;
+        operatorText.textContent = operator;
+        timeText.textContent = "Time: "+time;
+        resultText.textContent = result;
 
-    if(hasilGestur==result){
-        arrIndex = randomizeInt(0, 1);
-        randomizeNumbers(arrIndex);
-        score+=100;
-        prizeText.textContent = "Prize: $"+ score;
-    }
+        if(hasilGestur==result){
+            arrIndex = randomizeInt(0, 1);
+            randomizeNumbers(arrIndex);
+            score+=100;
+            prizeText.textContent = "Prize: $"+ score;
+        }
 
     } else{ //hard mode
+        firstNumberText.textContent = "";
+        secondNumberText.textContent = "";
+        operatorText.textContent = operator;
+        timeText.textContent = "Time: 60";
+        prizeText.textContent = "Prize: $"+ score;
         firstNumber = randomizeInt(1, 50);
         secondNumber = randomizeInt(1, 50)
         arrIndex = randomizeInt(0, 3);
@@ -249,19 +263,26 @@ function gameLoop(){
             case 2:
                 operator = "x";
                 result = firstNumber * secondNumber;
+                Math.round(result);
                 break;
             case 3:
                 operator = "÷";
                 result = firstNumber / secondNumber;
+                Math.round(result);
                 break;
         }
+        firstNumberText.textContent = firstNumber;
+        secondNumberText.textContent = secondNumber;
+        operatorText.textContent = operator;
+        timeText.textContent = "Time: "+time;
+        resultText.textContent = result;
         pil1 = randomizeInt(1, 250);
         pil2 = randomizeInt(1, 250);
         pil3 = randomizeInt(1, 250);
     }
     if(time==0){
         question.style.display = "none";
-        pageFour.style.display = "none";
+        pageFive.style.display = "none";
         timeText.style.display = "none";
         console.log("game finished");
         pageSix.style.display = "inline";
@@ -311,4 +332,19 @@ function resetGameValues(){
     pil2 = 0;
     pil3 = 0;
     arrIndex = 0;
+}
+
+function randomizeChoices(arr) {
+    var i = arr.length,
+        j = 0,
+        temp;
+
+    while (i--) {
+        j = Math.floor(Math.random() * (i+1));
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+
+    }
+    return arr;
 }
