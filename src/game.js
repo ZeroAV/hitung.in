@@ -6,7 +6,8 @@ var congratulations = document.getElementById("congrats");
 var firstNumberText = document.getElementById("firstNumber");
 var secondNumberText = document.getElementById("secondNumber");
 var operatorText = document.getElementById("operator");
-var prizeText = document.getElementById("prizeText");
+var prizeText1 = document.getElementById("prizeText1");
+var prizeText2 = document.getElementById("prizeText2");
 var startButton = document.getElementById("startButton");
 var startButton2 = document.getElementById("startButton2");
 var helpButton = document.getElementById("helpbutton");
@@ -237,19 +238,20 @@ playAgainButton.onclick = function(){
 }
 
 pil1Button.onclick = function (){
-    tempResult = document.getElementById("0").textContent.parseInt();
+    tempResult = parseInt(document.getElementById("0").textContent);
+    console.log(tempResult);
 }
 
 pil2Button.onclick = function (){
-    tempResult = document.getElementById("1").textContent.parseInt();
+    tempResult = parseInt(document.getElementById("1").textContent);
 }
 
-pil3Button.onclick = function (result){
-    tempResult = document.getElementById("2").textContent.parseInt();
+pil3Button.onclick = function (){
+    tempResult = parseInt(document.getElementById("2").textContent);
 }
 
-pil4Button.onclick = function (result){
-    tempResult = document.getElementById("3").textContent.parseInt();
+pil4Button.onclick = function (){
+    tempResult = parseInt(document.getElementById("3").textContent);
 }
 
 function gameLoop(){
@@ -258,7 +260,7 @@ function gameLoop(){
         secondNumberText.textContent = "";
         operatorText.textContent = operator;
         timeText.textContent = "Time: 60";
-        prizeText.textContent = "Prize: $"+ score;
+        prizeText1.textContent = "Prize: $"+ score;
         arrIndex = randomizeInt(0, 1);
         if(firstNumber==1000 && secondNumber==1000){
             randomizeNumbersEasy(arrIndex);
@@ -278,7 +280,7 @@ function gameLoop(){
             arrIndex = randomizeInt(0, 1);
             randomizeNumbersEasy(arrIndex);
             score+=100;
-            prizeText.textContent = "Prize: $"+ score;
+            prizeText1.textContent = "Prize: $"+ score;
         }
 
     } else{ //hard mode
@@ -286,7 +288,7 @@ function gameLoop(){
         secondNumberText.textContent = "";
         operatorText.textContent = operator;
         timeText.textContent = "Time: 60";
-        prizeText.textContent = "Prize: $"+ score;
+        prizeText2.textContent = "Prize: $"+ score;
         arrIndex = randomizeInt(0, 3);
         if(firstNumber==1000 && secondNumber==1000){
             randomizeNumbersHard(arrIndex);
@@ -314,9 +316,9 @@ function gameLoop(){
         timeText.textContent = "Time: "+time;
         resultText.textContent = result;
         
-       
         switch(hasilGestur){
-            case 1: 
+            case "1": 
+                console.log("button 1 clicked");
                 pil1Button.onclick();
                 if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
@@ -333,10 +335,10 @@ function gameLoop(){
                         document.getElementById(i).textContent = pilArray[i];
                     }
                     score+=100;
-                    prizeText.textContent = "Prize: $"+ score;
+                    prizeText2.textContent = "Prize: $"+ score;
                 }
                 break;
-            case 2: 
+            case "2": 
                 pil2Button.click();
                 if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
@@ -353,10 +355,10 @@ function gameLoop(){
                         document.getElementById(i).textContent = pilArray[i];
                     }
                     score+=100;
-                    prizeText.textContent = "Prize: $"+ score;
+                    prizeText2.textContent = "Prize: $"+ score;
                 }
                 break;
-            case 3: 
+            case "3": 
                 pil3Button.click();
                 if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
@@ -373,10 +375,10 @@ function gameLoop(){
                         document.getElementById(i).textContent = pilArray[i];
                     }
                     score+=100;
-                    prizeText.textContent = "Prize: $"+ score;
+                    prizeText2.textContent = "Prize: $"+ score;
                 }
                 break;
-            case 5: 
+            case "5": 
                 pil4Button.click();
                 if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
@@ -393,7 +395,7 @@ function gameLoop(){
                         document.getElementById(i).textContent = pilArray[i];
                     }
                     score+=100;
-                    prizeText.textContent = "Prize: $"+ score;
+                    prizeText2.textContent = "Prize: $"+ score;
                 }
                 break;
         }
@@ -479,7 +481,7 @@ function resetGameValues(){
     isEasy = false;
     time = 10; //reset to 60 after dev finished
     score = 0;
-    temp = 0;
+    tempResult = 0;
     pil1 = 0;
     pil2 = 0;
     pil3 = 0;
