@@ -75,16 +75,16 @@ function recog(){
         }
     } else if(pageTwo.style.display=="inline"){
         switch(hasilGestur){
-            case "1":
+            case "thumbs_up":
                 startButton2.click();
                 break;
-            case "5":
+            case "2":
                 menuButton2.click();
                 break;
         }
     } else if(pageThree.style.display=="inline"){
         switch(hasilGestur){
-            case "thumbs_up":
+            case "1":
                 easyButton.click();
                 break;
             case "2":
@@ -237,19 +237,19 @@ playAgainButton.onclick = function(){
 }
 
 pil1Button.onclick = function (){
-    tempResult = document.getElementById("0").textContent;
+    tempResult = document.getElementById("0").textContent.parseInt();
 }
 
 pil2Button.onclick = function (){
-    tempResult = document.getElementById("1").textContent;
+    tempResult = document.getElementById("1").textContent.parseInt();
 }
 
 pil3Button.onclick = function (result){
-    tempResult = document.getElementById("2").textContent;
+    tempResult = document.getElementById("2").textContent.parseInt();
 }
 
 pil4Button.onclick = function (result){
-    tempResult = document.getElementById("3").textContent;
+    tempResult = document.getElementById("3").textContent.parseInt();
 }
 
 function gameLoop(){
@@ -318,7 +318,7 @@ function gameLoop(){
         switch(hasilGestur){
             case 1: 
                 pil1Button.onclick();
-                if(tempResult==result.toString()){
+                if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
                     pil1 = randomizeInt(1, 250);
@@ -338,7 +338,7 @@ function gameLoop(){
                 break;
             case 2: 
                 pil2Button.click();
-                if(tempResult==result.toString()){
+                if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
                     pil1 = randomizeInt(1, 250);
@@ -358,7 +358,7 @@ function gameLoop(){
                 break;
             case 3: 
                 pil3Button.click();
-                if(tempResult==result.toString()){
+                if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
                     pil1 = randomizeInt(1, 250);
@@ -378,7 +378,7 @@ function gameLoop(){
                 break;
             case 5: 
                 pil4Button.click();
-                if(tempResult==result.toString()){
+                if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
                     pil1 = randomizeInt(1, 250);
@@ -400,6 +400,7 @@ function gameLoop(){
     }
     if(time==0){
         question.style.display = "none";
+        pageFour.style.display = "none";
         pageFive.style.display = "none";
         timeText.style.display = "none";
         console.log("game finished");
