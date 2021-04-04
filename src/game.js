@@ -17,6 +17,10 @@ var menuButton5 = document.getElementById("menubutton5");
 var menuButton6 = document.getElementById("menubutton6");
 var easyButton = document.getElementById("easy");
 var hardButton = document.getElementById("hard");
+var pil1Button = document.getElementById("pil1");
+var pil2Button = document.getElementById("pil2");
+var pil3Button = document.getElementById("pil3");
+var pil4Button = document.getElementById("pil4");
 var playAgainButton = document.getElementById("playAgainButton");
 var pageOne = document.getElementById("page-one");
 var pageTwo = document.getElementById("page-two");
@@ -36,7 +40,7 @@ var result = 0;
 var isEasy = false;
 var time = 10; //reset to 60 after dev finished along with resetvalues();
 var score = 0;
-var temp = 0;
+var tempResult = 0;
 var pil1 = 0;
 var pil2 = 0;
 var pil3 = 0;
@@ -148,6 +152,17 @@ menuButton4.onclick = function(){
     resetGameValues();
 }
 
+menuButton5.onclick = function(){
+    pageFive.style.display= "none";
+    question.style.display = "none";
+    timeText.style.display = "none";
+    clearInterval(gameStart);
+    console.log('menu clicked');
+    gameTitle.style.display= "inline";
+    pageOne.style.display= "inline";
+    resetGameValues();
+}
+
 menuButton6.onclick = function(){
     pageSix.style.display= "none";
     congratulations.style.display= "none";
@@ -209,8 +224,32 @@ playAgainButton.onclick = function(){
         pageFour.style.display= "inline";
         gameStart = setInterval(gameLoop, 1000);
     } else{
-
+        pageSix.style.display= "none";
+        congratulations.style.display= "none";
+        console.log('play again easy clicked');
+        resetGameValues();
+        isEasy = false;
+        question.style.display = "inline";
+        timeText.style.display = "inline";
+        pageFive.style.display= "inline";
+        gameStart = setInterval(gameLoop, 1000);
     }
+}
+
+pil1Button.onclick = function (){
+    tempResult = document.getElementById("0").textContent;
+}
+
+pil2Button.onclick = function (){
+    tempResult = document.getElementById("1").textContent;
+}
+
+pil3Button.onclick = function (result){
+    tempResult = document.getElementById("2").textContent;
+}
+
+pil4Button.onclick = function (result){
+    tempResult = document.getElementById("3").textContent;
 }
 
 function gameLoop(){
@@ -222,7 +261,7 @@ function gameLoop(){
         prizeText.textContent = "Prize: $"+ score;
         arrIndex = randomizeInt(0, 1);
         if(firstNumber==1000 && secondNumber==1000){
-            randomizeNumbers(arrIndex);
+            randomizeNumbersEasy(arrIndex);
             firstNumberText.textContent = firstNumber;
             secondNumberText.textContent = secondNumber;
             operatorText.textContent = operator;
@@ -237,7 +276,7 @@ function gameLoop(){
 
         if(hasilGestur==result){
             arrIndex = randomizeInt(0, 1);
-            randomizeNumbers(arrIndex);
+            randomizeNumbersEasy(arrIndex);
             score+=100;
             prizeText.textContent = "Prize: $"+ score;
         }
@@ -248,37 +287,116 @@ function gameLoop(){
         operatorText.textContent = operator;
         timeText.textContent = "Time: 60";
         prizeText.textContent = "Prize: $"+ score;
-        firstNumber = randomizeInt(1, 50);
-        secondNumber = randomizeInt(1, 50)
         arrIndex = randomizeInt(0, 3);
-        switch(arrIndex){
-            case 0:
-                operator = "+";
-                result = firstNumber + secondNumber;
-                break;
-            case 1:
-                operator = "-";
-                result = firstNumber - secondNumber;
-                break;
-            case 2:
-                operator = "x";
-                result = firstNumber * secondNumber;
-                Math.round(result);
-                break;
-            case 3:
-                operator = "÷";
-                result = firstNumber / secondNumber;
-                Math.round(result);
-                break;
+        if(firstNumber==1000 && secondNumber==1000){
+            randomizeNumbersHard(arrIndex);
+            firstNumberText.textContent = firstNumber;
+            secondNumberText.textContent = secondNumber;
+            operatorText.textContent = operator;
+            timeText.textContent = "Time: "+time;
+            resultText.textContent = result;
+            pil1 = randomizeInt(1, 250);
+            pil2 = randomizeInt(1, 250);
+            pil3 = randomizeInt(1, 250);
+            pilArray[0] = pil1;
+            pilArray[1] = pil2;
+            pilArray[2] = pil3;
+            pilArray[3] = result;
+            randomizeChoices(pilArray);
+            for(i=0; i<pilArray.length; i++){
+                document.getElementById(i).textContent = pilArray[i];
+            }
+            console.log(result);
         }
         firstNumberText.textContent = firstNumber;
         secondNumberText.textContent = secondNumber;
         operatorText.textContent = operator;
         timeText.textContent = "Time: "+time;
         resultText.textContent = result;
-        pil1 = randomizeInt(1, 250);
-        pil2 = randomizeInt(1, 250);
-        pil3 = randomizeInt(1, 250);
+        
+       
+        switch(hasilGestur){
+            case 1: 
+                pil1Button.onclick();
+                if(tempResult==result.toString()){
+                    arrIndex = randomizeInt(0, 3);
+                    randomizeNumbersHard(arrIndex);
+                    pil1 = randomizeInt(1, 250);
+                    pil2 = randomizeInt(1, 250);
+                    pil3 = randomizeInt(1, 250);
+                    pilArray[0] = pil1;
+                    pilArray[1] = pil2;
+                    pilArray[2] = pil3;
+                    pilArray[3] = result;
+                    randomizeChoices(pilArray);
+                    for(i=0; i<pilArray.length; i++){
+                        document.getElementById(i).textContent = pilArray[i];
+                    }
+                    score+=100;
+                    prizeText.textContent = "Prize: $"+ score;
+                }
+                break;
+            case 2: 
+                pil2Button.click();
+                if(tempResult==result.toString()){
+                    arrIndex = randomizeInt(0, 3);
+                    randomizeNumbersHard(arrIndex);
+                    pil1 = randomizeInt(1, 250);
+                    pil2 = randomizeInt(1, 250);
+                    pil3 = randomizeInt(1, 250);
+                    pilArray[0] = pil1;
+                    pilArray[1] = pil2;
+                    pilArray[2] = pil3;
+                    pilArray[3] = result;
+                    randomizeChoices(pilArray);
+                    for(i=0; i<pilArray.length; i++){
+                        document.getElementById(i).textContent = pilArray[i];
+                    }
+                    score+=100;
+                    prizeText.textContent = "Prize: $"+ score;
+                }
+                break;
+            case 3: 
+                pil3Button.click();
+                if(tempResult==result.toString()){
+                    arrIndex = randomizeInt(0, 3);
+                    randomizeNumbersHard(arrIndex);
+                    pil1 = randomizeInt(1, 250);
+                    pil2 = randomizeInt(1, 250);
+                    pil3 = randomizeInt(1, 250);
+                    pilArray[0] = pil1;
+                    pilArray[1] = pil2;
+                    pilArray[2] = pil3;
+                    pilArray[3] = result;
+                    randomizeChoices(pilArray);
+                    for(i=0; i<pilArray.length; i++){
+                        document.getElementById(i).textContent = pilArray[i];
+                    }
+                    score+=100;
+                    prizeText.textContent = "Prize: $"+ score;
+                }
+                break;
+            case 5: 
+                pil4Button.click();
+                if(tempResult==result.toString()){
+                    arrIndex = randomizeInt(0, 3);
+                    randomizeNumbersHard(arrIndex);
+                    pil1 = randomizeInt(1, 250);
+                    pil2 = randomizeInt(1, 250);
+                    pil3 = randomizeInt(1, 250);
+                    pilArray[0] = pil1;
+                    pilArray[1] = pil2;
+                    pilArray[2] = pil3;
+                    pilArray[3] = result;
+                    randomizeChoices(pilArray);
+                    for(i=0; i<pilArray.length; i++){
+                        document.getElementById(i).textContent = pilArray[i];
+                    }
+                    score+=100;
+                    prizeText.textContent = "Prize: $"+ score;
+                }
+                break;
+        }
     }
     if(time==0){
         question.style.display = "none";
@@ -293,6 +411,8 @@ function gameLoop(){
         time-=1;
         timeText.textContent = "Time: "+time;
     }
+
+    
     
 }
 
@@ -302,7 +422,7 @@ function randomizeInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function randomizeNumbers(index){
+function randomizeNumbersEasy(index){
     switch(index){
         case 0:
             operator = "+";   
@@ -315,6 +435,37 @@ function randomizeNumbers(index){
             firstNumber = randomizeInt(1, 10)
             secondNumber = firstNumber - randomizeInt(1, 5);
             result = firstNumber - secondNumber;
+            break;
+    }
+}
+
+function randomizeNumbersHard(index){
+    switch(index){
+        case 0:
+            firstNumber = randomizeInt(1, 50);
+            secondNumber = randomizeInt(1, 50)
+            operator = "+";
+            result = firstNumber + secondNumber;
+            break;
+        case 1:
+            firstNumber = randomizeInt(1, 50);
+            secondNumber = randomizeInt(1, 50)
+            operator = "-";
+            result = firstNumber - secondNumber;
+            break;
+        case 2:
+            firstNumber = randomizeInt(1, 50);
+            secondNumber = randomizeInt(1, 50)
+            operator = "x";
+            result = firstNumber * secondNumber;
+            Math.round(result);
+            break;
+        case 3:
+            firstNumber = randomizeInt(1, 50);
+            secondNumber = randomizeInt(1, 50)
+            operator = "÷";
+            result = firstNumber / secondNumber;
+            Math.round(result);
             break;
     }
 }

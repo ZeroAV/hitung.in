@@ -33,6 +33,11 @@
     font-size: 25px !important;
   }
 
+  #threeFinger{
+    height: 20px;
+    width: 20px;
+  }
+
   .btn-primary, .btn-secondary, .btn-danger{
       text-align: center !important;
       margin-top: 5%;
