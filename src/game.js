@@ -76,7 +76,7 @@ function recog(){
         }
     } else if(pageTwo.style.display=="inline"){
         switch(hasilGestur){
-            case "thumbs_up":
+            case "👍":
                 startButton2.click();
                 break;
             case "2":
@@ -97,14 +97,14 @@ function recog(){
         }
     } else if(pageFour.style.display=="inline"){
         switch(hasilGestur){
-            case "0":
+            case "👍":
                 menuButton4.click();
                 break;
         }
     } else if(pageFive.style.display=="inline"){
         switch(hasilGestur){
-            case "0":
-                menuButton5.click(); //hard mode WIP
+            case "👍":
+                menuButton5.click();
                 break;
         }
     } else if(pageSix.style.display=="inline"){
@@ -461,14 +461,14 @@ function randomizeNumbersHard(index){
             secondNumber = randomizeInt(1, 50)
             operator = "x";
             result = firstNumber * secondNumber;
-            Math.round(result);
+            result = Math.round(result);
             break;
         case 3:
             firstNumber = randomizeInt(1, 50);
             secondNumber = randomizeInt(1, 50)
             operator = "÷";
             result = firstNumber / secondNumber;
-            Math.round(result);
+            result = Math.round(result);
             break;
     }
 }
