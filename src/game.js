@@ -378,7 +378,7 @@ function gameLoop(){
                     prizeText2.textContent = "Prize: $"+ score;
                 }
                 break;
-            case "5": 
+            case "4": 
                 pil4Button.click();
                 if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
