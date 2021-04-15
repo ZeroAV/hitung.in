@@ -122,6 +122,7 @@ function recog(){
 }
 
 setInterval(recog, interval);
+
 helpButton.onclick = function() {
     pageOne.style.display= "none";
     console.log('help clicked');
@@ -429,14 +430,15 @@ function randomizeNumbersEasy(index){
     switch(index){
         case 0:
             operator = "+";   
-             firstNumber = randomizeInt(1, 4);
+            firstNumber = randomizeInt(1, 4);
             result = randomizeInt(1,5);
             secondNumber = result - firstNumber;
             break;
         case 1:
             operator = "-";
-            firstNumber = randomizeInt(1, 10)
-            secondNumber = firstNumber - randomizeInt(1, 5);
+            firstNumber = randomizeInt(1, 10);
+            result = randomizeInt(1,5);
+            secondNumber = firstNumber - result;
             result = firstNumber - secondNumber;
             break;
     }
@@ -468,7 +470,7 @@ function randomizeNumbersHard(index){
             secondNumber = randomizeInt(1, 50)
             operator = "÷";
             result = firstNumber / secondNumber;
-            result = Math.round(result);
+            result = result.toFixed(1);
             break;
     }
 }
