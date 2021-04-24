@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+  <audio id="music" src="sounds/music.mp3" preload="auto"></audio>
+  <audio id="correctSound" src="sounds/correct.wav" preload="auto"></audio>
   <title>Hitung.in</title>
   <div class="text-center">
     <h1 id="gameTitle">Hitung.in</h1>
@@ -10,11 +12,13 @@
     <h2 id="congrats">Congratulations! You won<br></h2>
     <div id="questionDiv">
       <span id="question" class="d-block p-2 bg-primary text-white text-center w-100 p-3"><br>
+          <span id="check1" class=blinking>✅</span>
           <span id="firstNumber"></span>
           <span id="operator"></span>
           <span id="secondNumber"></span>
           <span>=</span>
           <span id="result">?</span>
+          <span id="check2" class=blinking>✅</span>
         </span>
       </div>
     </div>

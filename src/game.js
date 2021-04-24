@@ -31,6 +31,15 @@ var pageFive = document.getElementById("page-five");
 var pageSix = document.getElementById("page-six");
 
 var resultText = document.getElementById("result");
+var check1 = document.getElementById("check1");
+var check2 = document.getElementById("check2");
+
+var music = document.getElementById("music");
+var correctSound = document.getElementById("correctSound");
+correctSound.volume = 0.5;
+music.volume = 0.1;
+music.loop = true;
+music.play();
 
 
 var interval = 500;
@@ -39,7 +48,7 @@ var secondNumber = 1000;
 var operator = "+";
 var result = 0;
 var isEasy = false;
-var time = 10; //reset to 60 after dev finished along with resetvalues();
+var time = 30; //reset to 60 after dev finished along with resetvalues();
 var score = 0;
 var tempResult = 0;
 var pil1 = 0;
@@ -60,7 +69,8 @@ selDiff.style.display = "none";
 timeText.style.display = "none";
 question.style.display = "none";
 congratulations.style.display = "none";
-
+check1.style.display = "none";
+check2.style.display = "none";
 
 function recog(){
     interval = 500;
@@ -257,6 +267,8 @@ pil4Button.onclick = function (){
 
 function gameLoop(){
     if(isEasy){ //easy mode
+        check1.style.display = "none";
+        check2.style.display = "none";
         firstNumberText.textContent = "";
         secondNumberText.textContent = "";
         operatorText.textContent = operator;
@@ -269,22 +281,27 @@ function gameLoop(){
             secondNumberText.textContent = secondNumber;
             operatorText.textContent = operator;
             timeText.textContent = "Time: "+time;
-            resultText.textContent = result;
+            //resultText.textContent = result;
         }
         firstNumberText.textContent = firstNumber;
         secondNumberText.textContent = secondNumber;
         operatorText.textContent = operator;
         timeText.textContent = "Time: "+time;
-        resultText.textContent = result;
+        //resultText.textContent = result;
 
         if(hasilGestur==result){
             arrIndex = randomizeInt(0, 1);
             randomizeNumbersEasy(arrIndex);
             score+=100;
             prizeText1.textContent = "Prize: $"+ score;
+            check1.style.display = "inline";
+            check2.style.display = "inline";
+            correctSound.play();
         }
 
     } else{ //hard mode
+        check1.style.display = "none";
+        check2.style.display = "none";
         firstNumberText.textContent = "";
         secondNumberText.textContent = "";
         operatorText.textContent = operator;
@@ -297,7 +314,7 @@ function gameLoop(){
             secondNumberText.textContent = secondNumber;
             operatorText.textContent = operator;
             timeText.textContent = "Time: "+time;
-            resultText.textContent = result;
+            //resultText.textContent = result;
             pil1 = randomizeInt(1, 250);
             pil2 = randomizeInt(1, 250);
             pil3 = randomizeInt(1, 250);
@@ -315,7 +332,7 @@ function gameLoop(){
         secondNumberText.textContent = secondNumber;
         operatorText.textContent = operator;
         timeText.textContent = "Time: "+time;
-        resultText.textContent = result;
+        //resultText.textContent = result;
         
         switch(hasilGestur){
             case "1": 
@@ -337,6 +354,9 @@ function gameLoop(){
                     }
                     score+=100;
                     prizeText2.textContent = "Prize: $"+ score;
+                    check1.style.display = "inline";
+                    check2.style.display = "inline";
+                    correctSound.play();
                 }
                 break;
             case "2": 
@@ -357,6 +377,9 @@ function gameLoop(){
                     }
                     score+=100;
                     prizeText2.textContent = "Prize: $"+ score;
+                    check1.style.display = "inline";
+                    check2.style.display = "inline";
+                    correctSound.play();
                 }
                 break;
             case "3": 
@@ -377,6 +400,9 @@ function gameLoop(){
                     }
                     score+=100;
                     prizeText2.textContent = "Prize: $"+ score;
+                    check1.style.display = "inline";
+                    check2.style.display = "inline";
+                    correctSound.play();
                 }
                 break;
             case "4": 
@@ -397,6 +423,9 @@ function gameLoop(){
                     }
                     score+=100;
                     prizeText2.textContent = "Prize: $"+ score;
+                    check1.style.display = "inline";
+                    check2.style.display = "inline";
+                    correctSound.play();
                 }
                 break;
         }
@@ -481,7 +510,7 @@ function resetGameValues(){
     operator = "+";
     result = 0;
     isEasy = false;
-    time = 10; //reset to 60 after dev finished
+    time = 30; //reset to 60 after dev finished
     score = 0;
     tempResult = 0;
     pil1 = 0;
