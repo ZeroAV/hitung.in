@@ -64,7 +64,10 @@
     height: 100%;
     overflow: hidden;
     font-family: Arial, sans-serif;
-    background: #333333 !important;
+    background-image: url('../img/BG.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     color: #ffffff;
   }
 

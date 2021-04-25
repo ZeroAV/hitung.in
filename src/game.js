@@ -37,7 +37,7 @@ var check2 = document.getElementById("check2");
 var music = document.getElementById("music");
 var correctSound = document.getElementById("correctSound");
 correctSound.volume = 0.5;
-music.volume = 0.1;
+music.volume = 0.5;
 music.loop = true;
 music.play();
 
@@ -55,7 +55,6 @@ var pil1 = 0;
 var pil2 = 0;
 var pil3 = 0;
 var pilArray = [1, 2, 3 , 4];
-var operators = ["+", "-", "*", "/"] ;
 var arrIndex = 0;
 var gameStart
 
