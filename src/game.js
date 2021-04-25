@@ -437,7 +437,7 @@ function gameLoop(){
         console.log("game finished");
         pageSix.style.display = "inline";
         congratulations.style.display = "inline";
-        congratulations.textContent = "Congratulations! You got $" + score;
+        congratulations.textContent = "Congratulations! You won $" + score;
         clearInterval(gameStart);
     } else{
         time-=1;
