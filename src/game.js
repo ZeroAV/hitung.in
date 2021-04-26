@@ -351,9 +351,9 @@ function gameLoop(){
                 if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
-                    pil1 = randomizeInt(1, 250);
-                    pil2 = randomizeInt(1, 250);
-                    pil3 = randomizeInt(1, 250);
+                    pil1 = randomizeInt(1, 200);
+                    pil2 = randomizeInt(1, 200);
+                    pil3 = randomizeInt(1, 200);
                     pilArray[0] = pil1;
                     pilArray[1] = pil2;
                     pilArray[2] = pil3;
@@ -374,9 +374,9 @@ function gameLoop(){
                 if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
-                    pil1 = randomizeInt(1, 250);
-                    pil2 = randomizeInt(1, 250);
-                    pil3 = randomizeInt(1, 250);
+                    pil1 = randomizeInt(1, 50);
+                    pil2 = randomizeInt(1, 50);
+                    pil3 = randomizeInt(1, 50);
                     pilArray[0] = pil1;
                     pilArray[1] = pil2;
                     pilArray[2] = pil3;
@@ -420,9 +420,9 @@ function gameLoop(){
                 if(tempResult==result){
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
-                    pil1 = randomizeInt(1, 250);
-                    pil2 = randomizeInt(1, 250);
-                    pil3 = randomizeInt(1, 250);
+                    pil1 = randomizeInt(1, 50);
+                    pil2 = randomizeInt(1, 50);
+                    pil3 = randomizeInt(1, 50);
                     pilArray[0] = pil1;
                     pilArray[1] = pil2;
                     pilArray[2] = pil3;
@@ -494,14 +494,14 @@ function randomizeNumbersEasy(index){
 function randomizeNumbersHard(index){
     switch(index){
         case 0:
-            firstNumber = randomizeInt(1, 50);
-            secondNumber = randomizeInt(1, 50)
+            firstNumber = randomizeInt(1, 99);
+            secondNumber = randomizeInt(1, 99)
             operator = "+";
             result = firstNumber + secondNumber;
             break;
         case 1:
-            firstNumber = randomizeInt(1, 50);
-            secondNumber = randomizeInt(1, 50)
+            firstNumber = randomizeInt(1, 99);
+            secondNumber = randomizeInt(1, 98)
             operator = "-";
             result = firstNumber - secondNumber;
             break;
