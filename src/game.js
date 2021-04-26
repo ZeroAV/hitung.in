@@ -72,7 +72,7 @@ question.style.display = "none";
 congratulations.style.display = "none";
 check1.style.display = "none";
 check2.style.display = "none";
-window.alert("Mohon perbolehkan website untuk memutar audio dan menyalakan kamera untuk pengalaman terbaik. Tidak ada data video yang disimpan.\n\nPlease allow website to play audio and access camera for best experience. No camera data will be saved.")
+window.alert("Mohon perbolehkan website untuk memutar audio dan menyalakan kamera untuk pengalaman terbaik. Tidak ada data video yang disimpan. Jika video kamera tidak muncul pada browser Chrome, silahkan hapus history dan cookie browsing atau gunakan Incognito mode.\n\nPlease allow website to play audio and access camera for best experience. No camera data will be saved. If you're using Chrome browser and the video from camera does not appear, please clear your browsing history and cache or use Incognito mode.")
 
 //HAND GESTURE RECOGNITION FOR MENU NAVIGATION
 
