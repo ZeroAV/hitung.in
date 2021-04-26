@@ -48,7 +48,7 @@ var secondNumber = 1000;
 var operator = "+";
 var result = 0;
 var isEasy = false;
-var time = 30; //reset to 60 after dev finished along with resetvalues();
+var time = 30; //reset to 61 after dev finished along with resetvalues();
 var score = 0;
 var tempResult = 0;
 var pil1 = 0;
@@ -56,7 +56,9 @@ var pil2 = 0;
 var pil3 = 0;
 var pilArray = [1, 2, 3 , 4];
 var arrIndex = 0;
-var gameStart
+var gameStart;
+
+//PAGE INITIALIZATION
 
 pageOne.style.display = "inline";
 pageTwo.style.display = "none";
@@ -70,6 +72,8 @@ question.style.display = "none";
 congratulations.style.display = "none";
 check1.style.display = "none";
 check2.style.display = "none";
+
+//HAND GESTURE RECOGNITION FOR MENU NAVIGATION
 
 function recog(){
     interval = 500;
@@ -131,6 +135,8 @@ function recog(){
 }
 
 setInterval(recog, interval);
+
+//BUTTON ACTIONS
 
 helpButton.onclick = function() {
     pageOne.style.display= "none";
@@ -247,6 +253,8 @@ playAgainButton.onclick = function(){
     }
 }
 
+//ANSWER BUTTON CLICKS
+
 pil1Button.onclick = function (){
     tempResult = parseInt(document.getElementById("0").textContent);
     console.log(tempResult);
@@ -263,6 +271,8 @@ pil3Button.onclick = function (){
 pil4Button.onclick = function (){
     tempResult = parseInt(document.getElementById("3").textContent);
 }
+
+//GAME FUNCTIONS
 
 function gameLoop(){
     if(isEasy){ //easy mode

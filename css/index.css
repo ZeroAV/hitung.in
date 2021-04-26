@@ -3,6 +3,12 @@
     user-select: none;
   }
 
+
+  @font-face {
+    font-family: oneday;
+    src: url('/ONEDAY.ttf') format('truetype');
+}
+
   head {
     background-color: #333333;
     text-decoration-color: #ffffff;
