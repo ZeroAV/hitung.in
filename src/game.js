@@ -472,6 +472,10 @@ function randomizeNumbersEasy(index){
             firstNumber = randomizeInt(1, 4);
             result = randomizeInt(1,5);
             secondNumber = result - firstNumber;
+            if(secondNumber<0){
+                secondNumber *= -1;
+                operator="-";
+            }
             break;
         case 1:
             operator = "-";
@@ -479,6 +483,10 @@ function randomizeNumbersEasy(index){
             result = randomizeInt(1,5);
             secondNumber = firstNumber - result;
             result = firstNumber - secondNumber;
+            if(secondNumber<0){
+                secondNumber *= -1;
+                operator="+";
+            }
             break;
     }
 }
