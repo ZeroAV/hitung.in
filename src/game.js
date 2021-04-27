@@ -36,7 +36,7 @@ var check2 = document.getElementById("check2");
 
 var music = document.getElementById("music");
 var correctSound = document.getElementById("correctSound");
-correctSound.volume = 0.5;
+correctSound.volume = 0.4;
 music.volume = 0.2;
 music.loop = true;
 music.play();
