@@ -24,7 +24,8 @@
       </div>
     </div>
     
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">  
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
   <script src="fingerpose.js" type="text/javascript"></script>
@@ -56,15 +57,8 @@
     <br>2. Untuk menjawab, acungkan jari anda sebanyak angka jawaban atau buat gestur tangan sesuai pilihan</p>
 
     <p>Jawaban dari Easy mode hanya 1 hingga 5 <br>
-      Jawaban dari Hard mode sesuai pilihan ganda
+      Jawaban dari Hard mode sesuai pilihan ganda (1 hingga 4 untuk setiap pilihan)
     </p>
-    <!--<ol>
-      <li>Make sure your browser is allowed to access your camera</li>
-      <li>To answer, make a gesture of the number with your fingers</li>
-    </ol>
-    <p>Easy mode answers are only 1 to 5<br>
-      Hard mode answers are multiple choice
-    </p>-->
  
     <div class="btn-group-vertical">
       <button id="startButton2" type="button" class="btn btn-primary btn-lg">👍 Start 👍</button>
@@ -95,7 +89,7 @@
 <div id="page-five">
   <div class="text-center">
     <p id="prizeText2">Prize: $</p>
-    <div class="btn-group btn-group-lg" role="group" aria-label="answers">
+    <div id="pilihan" class="btn-group btn-group-lg" role="group" aria-label="answers">
       <button id="pil1" type="button" class="btn btn-secondary">☝🏻 <span id="0"></span></button>
       <button id="pil2" type="button" class="btn btn-secondary">✌🏻 <span id="1"></span></button>
       <button id="pil3" type="button" class="btn btn-secondary"><img id="threeFinger" src="img/3finger.png"> <span id="2"></span></button>
