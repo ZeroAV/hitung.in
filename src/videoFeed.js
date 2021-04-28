@@ -28,7 +28,6 @@ var hasilGestur;
         const video = document.querySelector("#pose-video");
         const canvas = document.querySelector("#pose-canvas");
         const ctx = canvas.getContext("2d");
-        video.play();
         const resultLayer = document.querySelector("#pose-result");
         
         // configure gesture estimator

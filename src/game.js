@@ -1,5 +1,6 @@
 var gameTitle = document.getElementById("gameTitle");
 var selDiff = document.getElementById("selectDiff");
+var help = document.getElementById("helpText");
 var timeText = document.getElementById("time");
 var question = document.getElementById("questionDiv");
 var congratulations = document.getElementById("congrats");
@@ -67,6 +68,7 @@ pageFour.style.display = "none";
 pageFive.style.display = "none";
 pageSix.style.display = "none";
 selDiff.style.display = "none";
+help.style.display = "none";
 timeText.style.display = "none";
 question.style.display = "none";
 congratulations.style.display = "none";
@@ -141,13 +143,17 @@ setInterval(recog, interval);
 
 helpButton.onclick = function() {
     pageOne.style.display= "none";
+    gameTitle.style.display = "none";
     console.log('help clicked');
+    help.style.display = "inline";
     pageTwo.style.display= "inline";
 };
 
 menuButton2.onclick = function(){
     pageTwo.style.display= "none";
+    help.style.display = "none";
     console.log('menu clicked');
+    gameTitle.style.display = "inline";
     pageOne.style.display= "inline";
 }
 
@@ -200,7 +206,7 @@ startButton.onclick = function(){
 
 startButton2.onclick = function(){
     pageTwo.style.display= "none";
-    gameTitle.style.display = "none";
+    help.style.display = "none";
     console.log('start clicked');
     selDiff.style.display = "inline";
     pageThree.style.display= "inline";
