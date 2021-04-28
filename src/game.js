@@ -24,6 +24,7 @@ var pil2Button = document.getElementById("pil2");
 var pil3Button = document.getElementById("pil3");
 var pil4Button = document.getElementById("pil4");
 var playAgainButton = document.getElementById("playAgainButton");
+var startCameraButton = document.getElementById("startCamera");
 var pageOne = document.getElementById("page-one");
 var pageTwo = document.getElementById("page-two");
 var pageThree = document.getElementById("page-three");
@@ -61,7 +62,7 @@ var gameStart;
 
 //PAGE INITIALIZATION
 
-pageOne.style.display = "inline";
+pageOne.style.display = "none";
 pageTwo.style.display = "none";
 pageThree.style.display = "none";
 pageFour.style.display = "none";

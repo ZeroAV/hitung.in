@@ -126,19 +126,22 @@ var hasilGestur;
       }
   
       window.addEventListener("DOMContentLoaded", () => {
-  
-        initCamera(
-          config.video.width, config.video.height, config.video.fps
-        ).then(video => {
-          video.play();
-          video.addEventListener("loadeddata", event => {
-            console.log("Camera is ready");
-            main();
+        document.getElementById("startCamera").onclick = function () {
+          initCamera(
+            config.video.width, config.video.height, config.video.fps
+          ).then(video => {
+            video.play();
+            video.addEventListener("loadeddata", event => {
+              console.log("Camera is ready");
+              main();
+            });
           });
-        });
-  
-        const canvas = document.querySelector("#pose-canvas");
-        canvas.width = config.video.width;
-        canvas.height = config.video.height;
-        console.log("Canvas initialized");
+    
+          const canvas = document.querySelector("#pose-canvas");
+          canvas.width = config.video.width;
+          canvas.height = config.video.height;
+          console.log("Canvas initialized");
+          document.getElementById("startCamera").style.display = "none";
+          document.getElementById("page-one").style.display = "inline";
+        }
       });
