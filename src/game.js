@@ -50,7 +50,7 @@ var secondNumber = 1000;
 var operator = "+";
 var result = 0;
 var isEasy = false;
-var time = 30; //reset to 61 after dev finished along with resetvalues();
+var time = 61; //reset to 61 after dev finished along with resetvalues();
 var score = 0;
 var tempResult = 0;
 var pil1 = 0;
@@ -535,7 +535,7 @@ function resetGameValues(){
     operator = "+";
     result = 0;
     isEasy = false;
-    time = 30; //reset to 60 after dev finished
+    time = 61; //reset to 61 after dev finished
     score = 0;
     tempResult = 0;
     pil1 = 0;
