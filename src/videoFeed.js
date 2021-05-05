@@ -143,5 +143,10 @@ var hasilGestur;
           console.log("Canvas initialized");
           document.getElementById("startCamera").style.display = "none";
           document.getElementById("page-one").style.display = "inline";
+          
+          var music = document.getElementById("music");
+          music.volume = 0.2;
+          music.loop = true;
+          music.play();
         }
       });

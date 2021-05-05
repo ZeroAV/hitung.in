@@ -36,12 +36,10 @@ var resultText = document.getElementById("result");
 var check1 = document.getElementById("check1");
 var check2 = document.getElementById("check2");
 
-var music = document.getElementById("music");
 var correctSound = document.getElementById("correctSound");
+var resultMusic = document.getElementById("resultMusic");
 correctSound.volume = 0.4;
-music.volume = 0.2;
-music.loop = true;
-music.play();
+resultMusic.loop = false;
 
 
 var interval = 500;
@@ -189,6 +187,8 @@ menuButton5.onclick = function(){
 }
 
 menuButton6.onclick = function(){
+    resultMusic.currentTime = 0;
+    resultMusic.pause();
     pageSix.style.display= "none";
     congratulations.style.display= "none";
     console.log('menu clicked');
@@ -238,6 +238,8 @@ hardButton.onclick = function(){
 }
 
 playAgainButton.onclick = function(){
+    resultMusic.currentTime = 0;
+    resultMusic.pause();
     if(isEasy){
         pageSix.style.display= "none";
         congratulations.style.display= "none";
@@ -456,6 +458,7 @@ function gameLoop(){
         pageSix.style.display = "inline";
         congratulations.style.display = "inline";
         congratulations.textContent = "Congratulations! You won $" + score;
+        resultMusic.play();
         clearInterval(gameStart);
     } else{
         time-=1;
