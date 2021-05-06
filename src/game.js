@@ -41,7 +41,7 @@ var resultMusic = document.getElementById("resultMusic");
 correctSound.volume = 0.4;
 resultMusic.loop = false;
 
-
+ 
 var interval = 500;
 var firstNumber = 1000;
 var secondNumber = 1000;
@@ -266,20 +266,20 @@ playAgainButton.onclick = function(){
 //ANSWER BUTTON CLICKS
 
 pil1Button.onclick = function (){
-    tempResult = parseInt(document.getElementById("0").textContent);
+    tempResult = parseFloat(document.getElementById("0").textContent);
     console.log(tempResult);
 }
 
 pil2Button.onclick = function (){
-    tempResult = parseInt(document.getElementById("1").textContent);
+    tempResult = parseFloat(document.getElementById("1").textContent);
 }
 
 pil3Button.onclick = function (){
-    tempResult = parseInt(document.getElementById("2").textContent);
+    tempResult = parseFloat(document.getElementById("2").textContent);
 }
 
 pil4Button.onclick = function (){
-    tempResult = parseInt(document.getElementById("3").textContent);
+    tempResult = parseFloat(document.getElementById("3").textContent);
 }
 
 //GAME FUNCTIONS
@@ -520,7 +520,7 @@ function randomizeNumbersHard(index){
             secondNumber = randomizeInt(1, 50)
             operator = "x";
             result = firstNumber * secondNumber;
-            result = Math.round(result);
+            result = result.toFixed(1);
             break;
         case 3:
             firstNumber = randomizeInt(1, 50);
