@@ -751,7 +751,7 @@
         var one = new S("one");
         one.addCurl(o.Thumb, a.FullCurl, .5), 
         one.addCurl(o.Index, a.NoCurl, .75),
-        one.addDirection(o.Index, l.VerticalUp, .75),
+        //one.addDirection(o.Index, l.VerticalUp, .75),
         one.addCurl(o.Middle, a.FullCurl, .75), 
         one.addCurl(o.Ring, a.FullCurl, .75), 
         one.addCurl(o.Pinky, a.FullCurl, .75), 
@@ -764,7 +764,7 @@
         three.addCurl(o.Index, a.NoCurl, .75),
         //three.addDirection(o.Index, l.DiagonalUpLeft, .75),
         three.addCurl(o.Middle, a.NoCurl, .75), 
-        three.addDirection(o.Middle, l.VerticalUp, .75),
+        //three.addDirection(o.Middle, l.VerticalUp, .75),
         three.addCurl(o.Ring, a.NoCurl, .75), 
         //three.addDirection(o.Ring, l.DiagonalUpRight, .75),
         three.addCurl(o.Pinky, a.FullCurl, 1), 
@@ -779,7 +779,7 @@
         four.addCurl(o.Index, a.NoCurl, .75),
         //three.addDirection(o.Index, l.DiagonalUpLeft, .75),
         four.addCurl(o.Middle, a.NoCurl, .75), 
-        four.addDirection(o.Middle, l.VerticalUp, .75),
+        //four.addDirection(o.Middle, l.VerticalUp, .75),
         four.addCurl(o.Ring, a.NoCurl, .75), 
         //three.addDirection(o.Ring, l.DiagonalUpRight, .75),
         four.addCurl(o.Pinky, a.NoCurl, 1)
