@@ -126,10 +126,10 @@ function recog(){
         }
     } else if(pageSix.style.display=="inline"){
         switch(hasilGestur){
-            case "1":
+            case "0":
                 playAgainButton.click();
                 break;
-            case "2":
+            case "👆":
                 menuButton6.click();
                 break;
         }

@@ -77,6 +77,9 @@
         })),
         n.r(r), n.d(r, "five", (function () {
             return five5
+        })),
+        n.r(r), n.d(r, "six", (function () {
+            return six6
         }));
         var o = {
                 Thumb: 0,
@@ -730,7 +733,21 @@
                 }]) && M(e.prototype, n), r && M(e, r), t
             }(),
             T = new S("victory");
-        T.addCurl(o.Thumb, a.HalfCurl, .5), T.addCurl(o.Thumb, a.NoCurl, .5), T.addDirection(o.Thumb, l.VerticalUp, 1), T.addDirection(o.Thumb, l.DiagonalUpLeft, 1), T.addCurl(o.Index, a.NoCurl, 1), T.addDirection(o.Index, l.VerticalUp, .75), T.addDirection(o.Index, l.DiagonalUpLeft, 1), T.addCurl(o.Middle, a.NoCurl, 1), T.addDirection(o.Middle, l.VerticalUp, 1), T.addDirection(o.Middle, l.DiagonalUpLeft, .75), T.addCurl(o.Ring, a.FullCurl, 1), T.addDirection(o.Ring, l.VerticalUp, .2), T.addDirection(o.Ring, l.DiagonalUpLeft, 1), T.addDirection(o.Ring, l.HorizontalLeft, .2), T.addCurl(o.Pinky, a.FullCurl, 1), T.addDirection(o.Pinky, l.VerticalUp, .2), T.addDirection(o.Pinky, l.DiagonalUpLeft, 1), T.addDirection(o.Pinky, l.HorizontalLeft, .2), T.setWeight(o.Index, 2), T.setWeight(o.Middle, 2);
+        T.addCurl(o.Thumb, a.HalfCurl, .5), 
+        T.addCurl(o.Thumb, a.FullCurl, .5), 
+        T.addCurl(o.Index, a.NoCurl, 1), 
+        T.addDirection(o.Index, l.VerticalUp, .75), 
+        T.addDirection(o.Index, l.DiagonalUpLeft, .75), 
+        T.addCurl(o.Middle, a.NoCurl, 1), 
+        T.addDirection(o.Middle, l.VerticalUp, .5), 
+        T.addDirection(o.Middle, l.DiagonalUpLeft, .5), 
+        T.addDirection(o.Middle, l.DiagonalUpRight, .5), 
+        T.addCurl(o.Ring, a.FullCurl, .75), 
+        T.addCurl(o.Ring, a.HalfCurl, .75), 
+        T.addCurl(o.Pinky, a.FullCurl, .75),
+        T.addCurl(o.Pinky, a.HalfCurl, .75), 
+        T.setWeight(o.Index, 2), 
+        T.setWeight(o.Middle, 2);
         var C = T,
             R = new S("thumbs_up");
         R.addCurl(o.Thumb, a.NoCurl, 1), R.addDirection(o.Thumb, l.VerticalUp, 1), R.addDirection(o.Thumb, l.DiagonalUpLeft, .25), R.addDirection(o.Thumb, l.DiagonalUpRight, .25);
@@ -760,14 +777,17 @@
 
 
         var three = new S("three");
-        three.addCurl(o.Thumb, a.FullCurl, 1), 
+        three.addCurl(o.Thumb, a.HalfCurl, .75), 
         three.addCurl(o.Index, a.NoCurl, .75),
-        //three.addDirection(o.Index, l.DiagonalUpLeft, .75),
+        three.addDirection(o.Index, l.VerticalUp, .75),
+        three.addDirection(o.Index, l.DiagonalUpLeft, .75),
+        three.addDirection(o.Index, l.DiagonalUpRight, .75),
         three.addCurl(o.Middle, a.NoCurl, .75), 
-        //three.addDirection(o.Middle, l.VerticalUp, .75),
-        three.addCurl(o.Ring, a.NoCurl, .75), 
-        //three.addDirection(o.Ring, l.DiagonalUpRight, .75),
-        three.addCurl(o.Pinky, a.FullCurl, 1), 
+        three.addDirection(o.Middle, l.VerticalUp, .75),
+        three.addDirection(o.Middle, l.DiagonalUpLeft, .75),
+        three.addDirection(o.Middle, l.DiagonalUpRight, .75),
+        three.addCurl(o.Ring, a.NoCurl, .75),
+        three.addCurl(o.Pinky, a.FullCurl, .75), 
         three.setWeight(o.Index, 1),
         three.setWeight(o.Middle, 2),
         three.setWeight(o.Ring, 1)
@@ -797,6 +817,19 @@
         five.addCurl(o.Ring, a.NoCurl, .75), 
         five.addCurl(o.Pinky, a.NoCurl, .75)
         var five5 = five;
+
+        var six = new S("six");
+        six.addCurl(o.Thumb, a.NoCurl, .75), 
+        six.addDirection(o.Thumb, l.DiagonalUpLeft, .75),
+        six.addDirection(o.Thumb, l.DiagonalUpRight, .75),
+        six.addCurl(o.Index, a.NoCurl, .75),
+        six.addDirection(o.Index, l.VerticalUp, .75),
+        six.addDirection(o.Index, l.DiagonalUpLeft, .75),
+        six.addDirection(o.Index, l.DiagonalUpRight, .75),
+        six.addCurl(o.Middle, a.FullCurl, .75), 
+        six.addCurl(o.Ring, a.FullCurl, .75), 
+        six.addCurl(o.Pinky, a.FullCurl, .75)
+        var six6 = six;
 
         e.default = {
             GestureEstimator: m,
