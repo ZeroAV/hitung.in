@@ -20,7 +20,8 @@ var hasilGestur;
         'two' : '2',
         'three' : '3',
         'four' : '4',
-        'five' : '5'
+        'five' : '5',
+        'six' : '👆'
       };
   
       async function main() {
@@ -40,7 +41,8 @@ var hasilGestur;
           //fp.Gestures.two,
           fp.Gestures.three,
           fp.Gestures.four,
-          fp.Gestures.five
+          fp.Gestures.five,
+          fp.Gestures.six
         ];
         const GE = new fp.GestureEstimator(knownGestures);
   
