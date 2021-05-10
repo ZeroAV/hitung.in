@@ -566,10 +566,10 @@ function checkPrevious () {
             if(pilArray[i] == result){
                 while(i == lastChoice){
                     randomizeChoices(pilArray);
-                    for(i=0; i<pilArray.length; i++){
-                        document.getElementById(i).textContent = pilArray[i];
-                        if(pilArray[i] == result){
-                            lastChoice = i;
+                    for(j=0; j<pilArray.length; j++){
+                        document.getElementById(j).textContent = pilArray[j];
+                        if(pilArray[j] == result){
+                            lastChoice = j;
                         }
                     }
                 }
