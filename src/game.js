@@ -57,7 +57,7 @@ var pil3 = 0;
 var pilArray = [1, 2, 3 , 4];
 var arrIndex = 0;
 var prevNumber = 1000;
-var lastChoice = 0;
+var lastChoice = 1000;
 var gameStart;
 
 //PAGE INITIALIZATION
@@ -75,6 +75,7 @@ question.style.display = "none";
 congratulations.style.display = "none";
 check1.style.display = "none";
 check2.style.display = "none";
+document.getElementById("loading").style.display = "none";
 window.alert("Mohon perbolehkan website untuk memutar audio dan menyalakan kamera untuk pengalaman terbaik. Tidak ada data video yang disimpan. Jika video kamera tidak muncul khususnya pada browser Chrome, silahkan hapus history dan cookie browsing atau gunakan Incognito mode. Permainan ini lebih baik dimainkan pada browser Firefox dan Safari.\n\nPlease allow website to play audio and access camera for best experience. No camera data will be saved. If you're using Chrome browser and the video from camera does not appear, please clear your browsing history and cache or use Incognito mode. This game works best in Firefox and Safari.")
 
 //HAND GESTURE RECOGNITION FOR MENU NAVIGATION
@@ -293,14 +294,14 @@ function gameLoop(){
         arrIndex = randomizeInt(0, 1);
         if(firstNumber==1000 && secondNumber==1000){
             randomizeNumbersEasy(arrIndex);
-            //checkPrevious();
+            checkPrevious();
         }
         //resultText.textContent = result;
 
         if(hasilGestur==result){
             arrIndex = randomizeInt(0, 1);
             randomizeNumbersEasy(arrIndex);
-            //checkPrevious();
+            checkPrevious();
             score+=100;
             prizeText1.textContent = "Prize: $"+ score;
             check1.style.display = "inline";
@@ -314,18 +315,7 @@ function gameLoop(){
         arrIndex = randomizeInt(0, 3);
         if(firstNumber==1000 && secondNumber==1000){
             randomizeNumbersHard(arrIndex);
-            //checkPrevious();
-            pil1 = randomizeInt(1, 250);
-            pil2 = randomizeInt(1, 250);
-            pil3 = randomizeInt(1, 250);
-            pilArray[0] = pil1;
-            pilArray[1] = pil2;
-            pilArray[2] = pil3;
-            pilArray[3] = result;
-            randomizeChoices(pilArray);
-            for(i=0; i<pilArray.length; i++){
-                document.getElementById(i).textContent = pilArray[i];
-            }
+            checkPrevious();
             console.log(result);
         }
         //resultText.textContent = result;
@@ -335,10 +325,10 @@ function gameLoop(){
                 console.log("button 1 clicked");
                 pil1Button.click();
                 if(tempResult==result){
-                    prevNumber = 0;
+                    lastChoice = 0;
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
-                    //checkPrevious();
+                    checkPrevious();
                     score+=100;
                     prizeText2.textContent = "Prize: $"+ score;
                     check1.style.display = "inline";
@@ -349,10 +339,10 @@ function gameLoop(){
             case "2": 
                 pil2Button.click();
                 if(tempResult==result){
-                    prevNumber = 1;
+                    lastChoice = 1;
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
-                    //checkPrevious();
+                    checkPrevious();
                     score+=100;
                     prizeText2.textContent = "Prize: $"+ score;
                     check1.style.display = "inline";
@@ -363,10 +353,10 @@ function gameLoop(){
             case "3": 
                 pil3Button.click();
                 if(tempResult==result){
-                    prevNumber = 2;
+                    lastChoice = 2;
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
-                    //checkPrevious();
+                    checkPrevious();
                     score+=100;
                     prizeText2.textContent = "Prize: $"+ score;
                     check1.style.display = "inline";
@@ -377,10 +367,10 @@ function gameLoop(){
             case "4": 
                 pil4Button.click();
                 if(tempResult==result){
-                    prevNumber = 3;
+                    lastChoice = 3;
                     arrIndex = randomizeInt(0, 3);
                     randomizeNumbersHard(arrIndex);
-                    //checkPrevious();
+                    checkPrevious();
                     score+=100;
                     prizeText2.textContent = "Prize: $"+ score;
                     check1.style.display = "inline";
@@ -488,9 +478,9 @@ function randomizeNumbersHard(index){
             operator = "x";
             result = firstNumber * secondNumber;
             result = result.toFixed(1);
-            pil1 = randomizeInt(1, 250);
-            pil2 = randomizeInt(1, 250);
-            pil3 = randomizeInt(1, 250);
+            pil1 = randomizeInt(1, 2499);
+            pil2 = randomizeInt(1, 2499);
+            pil3 = randomizeInt(1, 2499);
             pilArray[0] = pil1;
             pilArray[1] = pil2;
             pilArray[2] = pil3;
@@ -539,6 +529,7 @@ function resetGameValues(){
     pil3 = 0;
     arrIndex = 0;
     prevNumber = 1000;
+    lastChoice = 1000;
     firstNumberText.textContent = "";
     secondNumberText.textContent = "";
     operatorText.textContent = operator;
@@ -562,26 +553,27 @@ function randomizeChoices(arr) {
     return arr;
 }
 
-/*function checkPrevious () {
+function checkPrevious () {
     if(isEasy) {
         while(result == prevNumber){
             randomizeNumbersEasy(arrIndex);
         }
+        if(result != prevNumber){
+            prevNumber = result;
+        }
     }else {
         for(i=0; i<pilArray.length; i++){
             if(pilArray[i] == result){
-                lastChoice = i;
-                break;
-            }
-        }
-        while(lastChoice == prevNumber){
-            randomizeChoices(pilArray);
-            for(i=0; i<pilArray.length; i++){
-                document.getElementById(i).textContent = pilArray[i];
+                while(i == lastChoice){
+                    randomizeChoices(pilArray);
+                    for(i=0; i<pilArray.length; i++){
+                        document.getElementById(i).textContent = pilArray[i];
+                        if(pilArray[i] == result){
+                            lastChoice = i;
+                        }
+                    }
+                }
             }
         }
     }
-    if(result != prevNumber){
-        prevNumber = result;
-    }
-}*/
+}

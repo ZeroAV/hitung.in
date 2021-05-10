@@ -93,6 +93,7 @@ var hasilGestur;
   
         estimateHands();
         console.log("Starting predictions");
+        document.getElementById("loading").style.display = "none";
       }
   
       async function initCamera(width, height, fps) {
@@ -129,6 +130,7 @@ var hasilGestur;
   
       window.addEventListener("DOMContentLoaded", () => {
         document.getElementById("startCamera").onclick = function () {
+          document.getElementById("loading").style.display = "block";
           initCamera(
             config.video.width, config.video.height, config.video.fps
           ).then(video => {

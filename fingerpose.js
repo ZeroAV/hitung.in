@@ -81,6 +81,7 @@
         n.r(r), n.d(r, "six", (function () {
             return six6
         }));
+
         var o = {
                 Thumb: 0,
                 Index: 1,
@@ -777,7 +778,8 @@
 
 
         var three = new S("three");
-        three.addCurl(o.Thumb, a.HalfCurl, .75), 
+        three.addCurl(o.Thumb, a.HalfCurl, .75),
+        three.addCurl(o.Thumb, a.FullCurl, .75), 
         three.addCurl(o.Index, a.NoCurl, .75),
         three.addDirection(o.Index, l.VerticalUp, .75),
         three.addDirection(o.Index, l.DiagonalUpLeft, .75),
