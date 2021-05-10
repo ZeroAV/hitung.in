@@ -42,7 +42,7 @@ correctSound.volume = 0.4;
 resultMusic.loop = false;
 
  
-var interval = 500;
+var interval = 1000;
 var firstNumber = 1000;
 var secondNumber = 1000;
 var operator = "+";
@@ -81,7 +81,6 @@ window.alert("Mohon perbolehkan website untuk memutar audio dan menyalakan kamer
 //HAND GESTURE RECOGNITION FOR MENU NAVIGATION
 
 function recog(){
-    interval = 500;
     console.log(hasilGestur);
     if(pageOne.style.display=="inline"){
         switch(hasilGestur){
@@ -136,7 +135,6 @@ function recog(){
         }
     }
     hasilGestur="-";
-    interval = 5000;
 }
 
 setInterval(recog, interval);
