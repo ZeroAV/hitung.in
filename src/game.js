@@ -42,7 +42,7 @@ correctSound.volume = 0.4;
 resultMusic.loop = false;
 
  
-var interval = 1000;
+var interval = 750;
 var firstNumber = 1000;
 var secondNumber = 1000;
 var operator = "+";
