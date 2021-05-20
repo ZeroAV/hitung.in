@@ -38,7 +38,6 @@ var hasilGestur;
           fp.Gestures.ThumbsUpGesture,
           fp.Gestures.zero,
           fp.Gestures.one,
-          //fp.Gestures.two,
           fp.Gestures.three,
           fp.Gestures.four,
           fp.Gestures.five,
