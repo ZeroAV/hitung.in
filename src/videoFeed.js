@@ -139,17 +139,26 @@ var hasilGestur;
               main();
             });
           });
-    
-          const canvas = document.querySelector("#pose-canvas");
-          canvas.width = config.video.width;
-          canvas.height = config.video.height;
-          console.log("Canvas initialized");
+          navigator.getMedia = ( navigator.getUserMedia || // use the proper vendor prefix
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia);
           document.getElementById("startCamera").style.display = "none";
           document.getElementById("page-one").style.display = "inline";
           document.getElementById("tutorial").style.display = "none";
-          var music = document.getElementById("music");
-          music.volume = 0.2;
-          music.loop = true;
-          music.play();
+
+          navigator.getMedia({video: true}, function() {
+            const canvas = document.querySelector("#pose-canvas");
+            canvas.width = config.video.width;
+            canvas.height = config.video.height;
+            console.log("Canvas initialized");
+            var music = document.getElementById("music");
+            music.volume = 0.2;
+            music.loop = true;
+            music.play();
+          }, function() {
+            alert("Kamera tidak ditemukan. Silahkan sambungkan kamera, pastikan browser diperbolehkan mengakses kamera, dan refresh game. \n\nCamera not found. Please connect camera, allow browser access to the camera, and refresh the game.");
+          });
+         
         }
       });
